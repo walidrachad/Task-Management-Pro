@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/button/button_bloc.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/button/button_event.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/button/button_state.dart';
@@ -34,8 +36,8 @@ class CustomBlocButton extends StatelessWidget {
             mainAxisSize: fullWidth ? MainAxisSize.max : MainAxisSize.min,
             children: [
               SizedBox(
-                width: 18,
-                height: 18,
+                width: AppSpacing.l,
+                height: AppSpacing.l,
                 child: CircularProgressIndicator(
                   strokeWidth: 2,
                   valueColor: AlwaysStoppedAnimation<Color>(
@@ -43,7 +45,7 @@ class CustomBlocButton extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(width: 12),
+              const SizedBox(width: AppSpacing.m),
               Text(
                 'Loading...',
                 style: theme.textTheme.labelLarge?.copyWith(
@@ -62,7 +64,7 @@ class CustomBlocButton extends StatelessWidget {
                   icon,
                   size: 20,
                 ),
-                const SizedBox(width: 8),
+                const SizedBox(width: AppSpacing.s),
               ],
               Text(label),
             ],
@@ -80,9 +82,9 @@ class CustomBlocButton extends StatelessWidget {
           },
           style: FilledButton.styleFrom(
             padding:
-            const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+            const EdgeInsets.symmetric(horizontal: AppSpacing.xl, vertical: AppSpacing.m),
             shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppRadiusCircular.l),
             ),
           ),
           child: child,

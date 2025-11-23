@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/features/category/domain/entities/category_entity.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_management_pro_codex/features/task/presentation/bloc/task_bloc.dart';
@@ -18,14 +20,14 @@ class CategoryChip extends StatelessWidget {
     final color = Color(category.colorValue);
 
     return InkWell(
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadius.circular(AppRadiusCircular.m),
       onTap: () {
         context
             .read<TaskBloc>()
             .add(FilterTasks(categoryId: category.id, status: null, priority: null));
       },
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m, vertical: AppSpacing.s),
         decoration: BoxDecoration(
           color: color.withOpacity(0.1),
           borderRadius: BorderRadius.circular(12),
@@ -37,7 +39,7 @@ class CategoryChip extends StatelessWidget {
               radius: 8,
               backgroundColor: color,
             ),
-            const SizedBox(width: 8),
+            const SizedBox(width: AppSpacing.s),
             Expanded(
               child: Text(
                 category.name,

@@ -34,7 +34,7 @@ class BlocTextField extends StatefulWidget {
 }
 
 class _BlocTextFieldState extends State<BlocTextField> {
-  static const double _borderRadiusValue = 12.0;
+  static const double _borderRadiusValue = AppSpacing.m;
 
   late final FocusNode _focusNode;
   late final TextFieldBloc _bloc;

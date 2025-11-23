@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:task_management_pro_codex/app/routes.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
 import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/features/task/domain/entities/task_entity.dart';
 import 'package:task_management_pro_codex/features/task/presentation/animations/hero_animation.dart';
@@ -32,8 +33,8 @@ class TaskCard extends StatelessWidget {
         },
         child: Card(
           elevation: 1,
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppRadiusCircular.m)),
           child: Padding(
             padding: const EdgeInsets.all(AppSpacing.l),
             child: Column(
@@ -56,7 +57,7 @@ class TaskCard extends StatelessWidget {
                 ),
                 if (task.description != null &&
                     task.description!.isNotEmpty) ...[
-                  const SizedBox(height: 8),
+                  const SizedBox(height: AppSpacing.s),
                   Text(
                     task.description!,
                     style: theme.textTheme.bodyMedium,
@@ -64,7 +65,7 @@ class TaskCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                 ],
-                const SizedBox(height: 12),
+                const SizedBox(height: AppSpacing.m),
                 Row(
                   children: [
                     PriorityChip(priority: task.priority),
@@ -74,7 +75,7 @@ class TaskCard extends StatelessWidget {
                       size: 18,
                       color: theme.colorScheme.secondary,
                     ),
-                    const SizedBox(width: 6),
+                    const SizedBox(width: AppSpacing.s),
                     Text(
                       dueDateText,
                       style: theme.textTheme.labelLarge,

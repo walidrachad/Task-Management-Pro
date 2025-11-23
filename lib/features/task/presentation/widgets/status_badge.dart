@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 
 /// Small badge to represent a task status with color.
 class StatusBadge extends StatelessWidget {
@@ -40,10 +42,10 @@ class StatusBadge extends StatelessWidget {
     final theme = Theme.of(context);
 
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+      padding: const EdgeInsets.symmetric(horizontal: AppSpacing.m, vertical: AppSpacing.s),
       decoration: BoxDecoration(
         color: _backgroundColor(theme),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.circular(AppRadiusCircular.m),
       ),
       child: Text(
         status,

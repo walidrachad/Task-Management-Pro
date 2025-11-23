@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:task_management_pro_codex/app/routes.dart';
 import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/features/category/presentation/bloc/category_bloc.dart';
 import 'package:task_management_pro_codex/features/category/presentation/bloc/category_state.dart';
@@ -101,7 +100,7 @@ class _TaskListPageState extends State<TaskListPage> {
               child: ListView.separated(
                 padding: const EdgeInsets.all(AppSpacing.l),
                 itemCount: state.tasks.length,
-                separatorBuilder: (_, __) => const SizedBox(height: 12),
+                separatorBuilder: (_, __) => const SizedBox(height: AppSpacing.m),
                 itemBuilder: (context, index) {
                   final task = state.tasks[index];
                   return TaskCard(task: task);
@@ -226,7 +225,7 @@ class _TaskListPageState extends State<TaskListPage> {
                         child: const Text('Reset'),
                       ),
                     ),
-                    const SizedBox(width: 12),
+                    const SizedBox(width: AppSpacing.m),
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 
 /// Simple fade/slide-in animation for chart sections.
 class ChartFadeIn extends StatefulWidget {
@@ -92,7 +93,7 @@ class AnimatedBarRow extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: AppSpacing.m),
             Expanded(
               flex: 5,
               child: ClipRRect(
@@ -103,7 +104,7 @@ class AnimatedBarRow extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 12),
+            const SizedBox(width: AppSpacing.m),
             Text(value.toString(), style: theme.textTheme.bodyMedium),
           ],
         );

@@ -2,6 +2,7 @@ import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:task_management_pro_codex/app/routes.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
 import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/features/task/domain/entities/task_entity.dart';
 import 'package:task_management_pro_codex/features/task/presentation/animations/hero_animation.dart';
@@ -70,7 +71,7 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                     child: Card(
                       elevation: 2,
                       shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(AppRadiusCircular.m),
                       ),
                       child: Padding(
                         padding: const EdgeInsets.all(AppSpacing.l),
@@ -91,8 +92,8 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                                 ),
                                 Container(
                                   padding: const EdgeInsets.symmetric(
-                                    horizontal: 12,
-                                    vertical: 6,
+                                    horizontal: AppSpacing.m,
+                                    vertical: AppSpacing.s,
                                   ),
                                   decoration: BoxDecoration(
                                     color: theme.colorScheme.primary
@@ -111,7 +112,7 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                             ),
                             if (widget.task.description != null &&
                                 widget.task.description!.isNotEmpty) ...[
-                              const SizedBox(height: 12),
+                              const SizedBox(height: AppSpacing.m),
                               Text(
                                 widget.task.description!,
                                 style: theme.textTheme.bodyLarge,
@@ -123,13 +124,13 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                               label: 'Due date',
                               value: dueDateText,
                             ),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: AppSpacing.m),
                             _DetailRow(
                               icon: Icons.flag,
                               label: 'Priority',
                               value: widget.task.priority.name,
                             ),
-                            const SizedBox(height: 12),
+                            const SizedBox(height: AppSpacing.m),
                             _DetailRow(
                               icon: Icons.notifications_active,
                               label: 'Reminder',
@@ -138,7 +139,7 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                                   : 'Disabled',
                             ),
                             if (widget.task.categoryId != null) ...[
-                              const SizedBox(height: 12),
+                              const SizedBox(height: AppSpacing.m),
                               _DetailRow(
                                 icon: Icons.category,
                                 label: 'Category',
@@ -151,17 +152,17 @@ class _TaskDetailPageState extends State<TaskDetailPage> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: AppSpacing.xl),
                 Text(
                   'Actions',
                   style: theme.textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: AppSpacing.m),
                 Wrap(
-                  spacing: 12,
-                  runSpacing: 12,
+                  spacing: AppSpacing.m,
+                  runSpacing: AppSpacing.m,
                   children: [
                     ElevatedButton.icon(
                       onPressed: widget.task.status.toLowerCase() == 'completed'
@@ -279,14 +280,14 @@ class _DetailRow extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Icon(icon, size: 20, color: theme.colorScheme.secondary),
-        const SizedBox(width: 10),
+        const SizedBox(width: AppSpacing.m,),
         Text(
           label,
           style: theme.textTheme.labelLarge?.copyWith(
             fontWeight: FontWeight.w700,
           ),
         ),
-        const SizedBox(width: 8),
+        const SizedBox(width: AppSpacing.s),
         Expanded(
           child: Text(
             value,

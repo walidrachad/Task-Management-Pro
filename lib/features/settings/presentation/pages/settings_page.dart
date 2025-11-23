@@ -94,7 +94,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(state.message ?? 'Failed to load settings'),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: AppSpacing.m),
                   ElevatedButton(
                     onPressed: () =>
                         context.read<SettingsBloc>().add(const LoadSettings()),

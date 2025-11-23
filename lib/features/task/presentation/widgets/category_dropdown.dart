@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/dropdown_field/dropdown_field_bloc.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/dropdown_field/dropdown_field_event.dart';
 import 'package:task_management_pro_codex/core/ui/widgets/bloc_dropdown_field.dart';
@@ -54,10 +55,10 @@ class CategoryDropdown extends StatelessWidget {
             ),
             if (isLoading)
               const Positioned(
-                right: 12,
+                right: AppSpacing.m,
                 child: SizedBox(
-                  height: 18,
-                  width: 18,
+                  height: AppSpacing.l,
+                  width: AppSpacing.l,
                   child: CircularProgressIndicator(strokeWidth: 2),
                 ),
               ),

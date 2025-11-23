@@ -94,7 +94,7 @@ class ShimmerListPlaceholder extends StatelessWidget {
     super.key,
     this.itemCount = 5,
     this.padding = const EdgeInsets.all(AppSpacing.l),
-    this.spacing = 12,
+    this.spacing = AppSpacing.m,
   });
 
   /// Number of placeholder items to render.
@@ -135,20 +135,20 @@ class ShimmerListPlaceholder extends StatelessWidget {
                     _buildPill(),
                   ],
                 ),
-                const SizedBox(height: 12),
-                _buildLine(height: 12, widthFactor: 0.9),
+                const SizedBox(height: AppSpacing.m),
+                _buildLine(height: AppSpacing.m, widthFactor: 0.9),
                 const SizedBox(height: 8),
-                _buildLine(height: 12, widthFactor: 0.7),
-                const SizedBox(height: 12),
+                _buildLine(height: AppSpacing.m, widthFactor: 0.7),
+                const SizedBox(height: AppSpacing.m),
                 Row(
                   children: [
                     _buildIconCircle(),
                     const SizedBox(width: 8),
-                    _buildLine(height: 12, widthFactor: 0.2),
+                    _buildLine(height: AppSpacing.m, widthFactor: 0.2),
                     const Spacer(),
                     _buildIconCircle(),
                     const SizedBox(width: 8),
-                    _buildLine(height: 12, widthFactor: 0.25),
+                    _buildLine(height: AppSpacing.m, widthFactor: 0.25),
                   ],
                 ),
               ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
 import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/dropdown_field/dropdown_field_bloc.dart';
 import 'package:task_management_pro_codex/core/ui/bloc/dropdown_field/dropdown_field_event.dart';
@@ -79,29 +80,29 @@ class _BlocDropdownFieldState<T> extends State<BlocDropdownField<T>> {
             fillColor: fillColor,
             errorText: state.errorMessage,
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppRadiusCircular.l),
               borderSide: BorderSide(color: borderColor),
             ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppRadiusCircular.l),
               borderSide: BorderSide(
                 color: borderColor,
                 width: 2,
               ),
             ),
             errorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppRadiusCircular.l),
               borderSide: BorderSide(color: colorScheme.error),
             ),
             focusedErrorBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(AppRadiusCircular.l),
               borderSide: BorderSide(
                 color: colorScheme.error,
                 width: 2,
               ),
             ),
             contentPadding:
-            const EdgeInsets.symmetric(horizontal: AppSpacing.l, vertical: 12),
+            const EdgeInsets.symmetric(horizontal: AppSpacing.l, vertical: AppSpacing.m),
           ),
           onChanged: (value) {
             context

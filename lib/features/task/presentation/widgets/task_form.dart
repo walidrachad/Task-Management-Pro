@@ -67,7 +67,7 @@ class TaskForm extends StatelessWidget {
                   child: Row(
                     children: [
                       PriorityChip(priority: priority),
-                      const SizedBox(width: 8),
+                      const SizedBox(width: AppSpacing.s),
                       Text(priority.label),
                     ],
                   ),

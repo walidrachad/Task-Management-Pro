@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:task_management_pro_codex/core/constants/app_radius_circular.dart';
 import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 
 class DatePickerField extends StatelessWidget {
@@ -66,7 +67,7 @@ class DatePickerField extends StatelessWidget {
 
     return InkWell(
       onTap: enabled ? () => _pickDate(context) : null,
-      borderRadius: BorderRadius.circular(16),
+      borderRadius: BorderRadius.circular(AppRadiusCircular.l),
       child: InputDecorator(
         isFocused: false,
         isEmpty: value == null,
@@ -78,21 +79,21 @@ class DatePickerField extends StatelessWidget {
           enabled: enabled,
           suffixIcon: const Icon(Icons.calendar_today_rounded),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppRadiusCircular.l),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppRadiusCircular.l),
             borderSide: BorderSide(color: colorScheme.outlineVariant),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(AppRadiusCircular.l),
             borderSide: BorderSide(
               color: colorScheme.primary,
               width: 2,
             ),
           ),
           contentPadding:
-          const EdgeInsets.symmetric(horizontal: AppSpacing.l, vertical: 12),
+          const EdgeInsets.symmetric(horizontal: AppSpacing.l, vertical: AppSpacing.m),
         ),
         child: Text(
           value != null ? _formatDate(value!) : (hintText ?? 'Select date'),

@@ -29,7 +29,7 @@ class CategoryListPage extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(state.message ?? 'Failed to load categories'),
-                    const SizedBox(height: 12),
+                    const SizedBox(height: AppSpacing.m),
                     ElevatedButton.icon(
                       onPressed: () => context
                           .read<CategoryBloc>()
@@ -53,8 +53,8 @@ class CategoryListPage extends StatelessWidget {
               child: GridView.builder(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 12,
-                  crossAxisSpacing: 12,
+                  mainAxisSpacing: AppSpacing.m,
+                  crossAxisSpacing: AppSpacing.m,
                   childAspectRatio: 2.6,
                 ),
                 itemCount: state.categories.length,

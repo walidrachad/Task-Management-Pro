@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_management_pro_codex/core/constants/app_spacing.dart';
 
 class TextFieldError extends StatelessWidget {
   final String message;
@@ -13,7 +14,7 @@ class TextFieldError extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 6, left: 4),
+      padding: const EdgeInsets.only(top: AppSpacing.s, left: AppSpacing.xs),
       child: Row(
         children: [
           Icon(
@@ -21,7 +22,7 @@ class TextFieldError extends StatelessWidget {
             size: 18,
             color: color,
           ),
-          const SizedBox(width: 6),
+          const SizedBox(width: AppSpacing.s),
           Expanded(
             child: Text(
               message,
